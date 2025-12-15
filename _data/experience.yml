@@ -1,9 +1,4 @@
-- role: "Research Intern"
-  company: "Tech Company"
-  year: "Summer 2022"
-  description: "Worked on large language model evaluation and safety research."
+- role: "Research Intern in Alibaba Group"
+  year: "2024.01 - 2024.09"
+  description: "Worked on Agent Tool Learning and Development."
 
-- role: "Data Scientist"
-  company: "Startup Inc."
-  year: "2019 - 2020"
-  description: "Built ML pipelines for customer behavior prediction."
