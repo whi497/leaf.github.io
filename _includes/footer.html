@@ -1,0 +1,8 @@
+<footer>
+    <div>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. All rights reserved.</div>
+    <div class="social-links">
+        {% if site.author.email %}<a href="mailto:{{ site.author.email }}">Email</a>{% endif %}
+        {% if site.author.scholar %}<a href="{{ site.author.scholar }}" target="_blank">Google Scholar</a>{% endif %}
+        {% if site.author.github %}<a href="https://github.com/{{ site.author.github }}" target="_blank">GitHub</a>{% endif %}
+    </div>
+</footer>

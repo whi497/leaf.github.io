@@ -1,0 +1,9 @@
+- role: "Research Intern"
+  company: "Tech Company"
+  year: "Summer 2022"
+  description: "Worked on large language model evaluation and safety research."
+
+- role: "Data Scientist"
+  company: "Startup Inc."
+  year: "2019 - 2020"
+  description: "Built ML pipelines for customer behavior prediction."

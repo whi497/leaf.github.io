@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cd "$(dirname "$0")/.."
+
+bundle config set --local path vendor/bundle >/dev/null
+
+# On Apple Silicon, precompiled x86_64 native gems (ffi/protobuf/etc.) will not load in arm64 Ruby.
+# Forcing ruby-platform makes Bundler build native extensions for the current CPU.
+bundle config set --local force_ruby_platform true >/dev/null
+
+rm -rf vendor/bundle
+bundle install
+
+echo "Setup complete. Run: ./bin/serve"
+
+

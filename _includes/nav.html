@@ -1,0 +1,7 @@
+<nav>
+    <a href="{{ '/' | relative_url }}" class="brand">{{ site.author.name | upcase }}</a>
+    <div class="nav-links">
+        <a href="{{ '/writings/' | relative_url }}" {% if page.url contains '/writings' %}class="active"{% endif %}>Writings</a>
+        <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>About</a>
+    </div>
+</nav>

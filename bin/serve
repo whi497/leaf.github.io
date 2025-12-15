@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cd "$(dirname "$0")/.."
+
+# Prefer installing gems locally (no sudo) if you haven't configured Bundler yet.
+bundle config set --local path vendor/bundle >/dev/null
+
+# Install missing gems if needed.
+bundle check >/dev/null 2>&1 || bundle install
+
+exec bundle exec jekyll serve
+
+

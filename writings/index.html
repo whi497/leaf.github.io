@@ -1,0 +1,24 @@
+---
+layout: default
+title: Writings
+---
+
+<main>
+    <div class="section-title">Selected Writings</div>
+
+    <ul class="blog-list">
+        {% for post in site.posts %}
+        <li class="blog-item">
+            <span class="blog-date">{{ post.date | date: "%B %d, %Y" }}</span>
+            <a href="{{ post.url | relative_url }}" class="blog-title">{{ post.title }}</a>
+            {% if post.excerpt %}
+            <p class="blog-excerpt">{{ post.excerpt | strip_html | truncate: 200 }}</p>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+
+    {% if site.posts.size == 0 %}
+    <p style="color: var(--text-secondary); font-style: italic;">No posts yet. Check back soon.</p>
+    {% endif %}
+</main>

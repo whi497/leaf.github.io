@@ -1,0 +1,14 @@
+- degree: "PhD in Computer Science"
+  institution: "University Name"
+  year: "2020 - Present"
+  description: "Research focus: AI alignment, machine learning interpretability"
+
+- degree: "MS in Data Science"
+  institution: "Another University"
+  year: "2018 - 2020"
+  description: ""
+
+- degree: "BS in Mathematics"
+  institution: "Undergraduate University"
+  year: "2014 - 2018"
+  description: ""

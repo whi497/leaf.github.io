@@ -1,0 +1,23 @@
+# Site settings
+title: "Ziang Ye"
+description: "AI & DataScience"
+url: "https://whi497.github.io/leaf.github.io/" # Your GitHub Pages URL, e.g., https://username.github.io
+baseurl: "" # Leave empty if using username.github.io, or set to "/repo-name"
+
+# Author info
+author:
+  name: "Ziang Ye"
+  email: "yza03@mail.ustc.edu.cn"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Permalink style for blog posts
+permalink: /writings/:year/:month/:day/:title/
+
+# Exclude from build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
