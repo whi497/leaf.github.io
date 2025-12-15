@@ -1,63 +1,81 @@
 ---
 layout: default
-title: About
+title: PhD Student
 ---
 
 <main>
-    <!-- About Section -->
-    <section>
-        <div class="section-title">About</div>
-        <div class="about-text">
-            <p>I'm a PhD student in Computer Science, exploring the intersection of artificial intelligence and philosophy. My research focuses on understanding the nature of machine intelligence and its alignment with human values.</p>
+    <!-- About / Introduction -->
+    <section id="about">
+        <h2 class="section-header">Introduction</h2>
+        <div class="about-content">
+            <p>
+                I'm a PhD student in Computer Science, exploring the intersection of artificial intelligence and philosophy. My research focuses on understanding the nature of machine intelligence and its alignment with human values.
+            </p>
+            <p>
+                Beyond code, I'm drawn to the philosophy of technology and cognitive science. I believe data is not merely fuel for computation, but a projection of human behavior in the digital realm. I'm committed to building intelligent systems that are not only efficient, but also interpretable and robust.
+            </p>
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section>
-        <div class="section-title">Education</div>
+    <!-- Education -->
+    <section id="education">
+        <h2 class="section-header">Education</h2>
         <ul class="entry-list">
             {% for edu in site.data.education %}
             <li class="entry-item">
-                <div class="entry-title">{{ edu.degree }}</div>
-                <div class="entry-subtitle">{{ edu.institution }}</div>
-                <div class="entry-date">{{ edu.year }}</div>
-                {% if edu.description and edu.description != "" %}
-                <div class="entry-description">{{ edu.description }}</div>
-                {% endif %}
+                <div class="entry-meta">{{ edu.year }}</div>
+                <div class="entry-main">
+                    <div class="entry-title">{{ edu.degree }}</div>
+                    <div class="entry-subtitle">{{ edu.institution }}</div>
+                    {% if edu.description and edu.description != "" %}
+                    <div class="entry-desc">{{ edu.description }}</div>
+                    {% endif %}
+                </div>
             </li>
             {% endfor %}
         </ul>
     </section>
 
-    <!-- Experience Section -->
-    <section>
-        <div class="section-title">Industry Experience</div>
+    <!-- Industry Experience -->
+    <section id="industry">
+        <h2 class="section-header">Industry Experience</h2>
         <ul class="entry-list">
             {% for exp in site.data.experience %}
             <li class="entry-item">
-                <div class="entry-title">{{ exp.role }}</div>
-                <div class="entry-subtitle">{{ exp.company }}</div>
-                <div class="entry-date">{{ exp.year }}</div>
-                {% if exp.description and exp.description != "" %}
-                <div class="entry-description">{{ exp.description }}</div>
-                {% endif %}
+                <div class="entry-meta">{{ exp.year }}</div>
+                <div class="entry-main">
+                    <div class="entry-title">{{ exp.role }}</div>
+                    <div class="entry-subtitle">{{ exp.company }}</div>
+                    {% if exp.description and exp.description != "" %}
+                    <div class="entry-desc">{{ exp.description }}</div>
+                    {% endif %}
+                </div>
             </li>
             {% endfor %}
         </ul>
     </section>
 
-    <!-- Publications Section -->
-    <section>
-        <div class="section-title">Publications</div>
+    <!-- Publications -->
+    <section id="research">
+        <h2 class="section-header">Selected Publications</h2>
         <ul class="pub-list">
             {% for pub in site.data.publications %}
             <li class="pub-item">
-                <div class="pub-title">{{ pub.title }}</div>
-                <div class="pub-authors">{{ pub.authors }}</div>
-                <div class="pub-venue">{{ pub.venue }}, {{ pub.year }}</div>
-                <div class="pub-links">
-                    {% if pub.pdf and pub.pdf != "" %}<a href="{{ pub.pdf }}">[PDF]</a>{% endif %}
-                    {% if pub.code and pub.code != "" %}<a href="{{ pub.code }}">[Code]</a>{% endif %}
+                <div class="pub-meta">{{ pub.venue }}</div>
+                <div class="pub-main">
+                    {% if pub.pdf and pub.pdf != "" %}
+                    <a href="{{ pub.pdf }}" class="pub-title">{{ pub.title }}</a>
+                    {% else %}
+                    <span class="pub-title">{{ pub.title }}</span>
+                    {% endif %}
+                    <div class="pub-authors">{{ pub.authors }}</div>
+                    <div class="pub-venue">{{ pub.venue }}{% if pub.year %}, {{ pub.year }}{% endif %}</div>
+                    {% if pub.pdf != "" or pub.code != "" %}
+                    <div class="pub-links">
+                        {% if pub.pdf and pub.pdf != "" %}<a href="{{ pub.pdf }}">[PDF]</a>{% endif %}
+                        {% if pub.code and pub.code != "" %}<a href="{{ pub.code }}">[Code]</a>{% endif %}
+                    </div>
+                    {% endif %}
                 </div>
             </li>
             {% endfor %}

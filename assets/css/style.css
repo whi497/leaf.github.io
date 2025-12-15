@@ -1,29 +1,36 @@
 :root {
-    /* Color scheme: paper white, charcoal gray, Prussian blue accent */
-    --bg-color: #fcfbf9;
-    --text-primary: #2c2c2c;
-    --text-secondary: #6e6e6e;
-    --accent-color: #2a4d69;
-    --border-color: #e0e0e0;
-    --font-heading: 'Playfair Display', 'Noto Serif SC', serif;
-    --font-body: 'Lora', 'Noto Serif SC', serif;
+    --bg-color: #f9f8f4; /* 更接近古籍纸张的暖白 */
+    --text-primary: #333333;
+    --text-meta: #777777; /* 时间、地点等辅助信息 */
+    --accent-color: #8c3b3b; /* 勃艮第红，用于强调 */
+    --border-color: #e6e4df;
+    
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lora', serif;
+    --font-italic: 'Cormorant Garamond', serif;
 }
 
+/* 全局设置 */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-primary);
     font-family: var(--font-body);
-    line-height: 1.8;
+    line-height: 1.7;
     font-size: 16px;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+    /* 纸张纹理 */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
 }
 
+a { text-decoration: none; color: inherit; transition: color 0.3s; }
+a:hover { color: var(--accent-color); }
+
+/* 布局容器 */
 .container {
-    max-width: 720px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 80px 20px;
+    padding: 60px 24px;
 }
 
 /* Animations */
@@ -37,151 +44,196 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Navigation */
+/* ---------------- 导航栏 ---------------- */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 60px;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    margin-bottom: 80px;
     padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
 }
 
-.brand {
+.nav-name {
     font-family: var(--font-heading);
+    font-size: 1.4rem;
     font-weight: 700;
-    font-size: 1.2rem;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.02em;
     color: var(--text-primary);
     text-decoration: none;
 }
 
-.nav-links a {
-    margin-left: 25px;
-    text-decoration: none;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-    color: var(--accent-color);
-}
-
-/* Section titles */
-.section-title {
-    font-family: var(--font-heading);
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--text-secondary);
-    margin-bottom: 30px;
-    margin-top: 60px;
+.nav-menu {
     display: flex;
+    gap: 30px;
     align-items: center;
 }
 
-.section-title:first-of-type {
-    margin-top: 0;
+.nav-item {
+    font-size: 0.9rem;
+    color: var(--text-meta);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
-.section-title::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background-color: var(--border-color);
-    margin-left: 15px;
+.nav-item:hover,
+.nav-item.active {
+    color: var(--accent-color);
 }
 
-/* About section */
-.about-text {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    border-left: 2px solid var(--accent-color);
+/* 特别的 Writing 按钮样式 */
+.nav-writing {
+    font-family: var(--font-italic);
+    font-size: 1.3rem;
+    text-transform: none;
+    color: var(--text-primary);
+    position: relative;
     padding-left: 20px;
-    margin-bottom: 20px;
+    text-decoration: none;
 }
 
-/* Entry items (Education, Experience) */
+.nav-writing::before {
+    content: '✒';
+    position: absolute;
+    left: 0;
+    font-size: 0.8em;
+    opacity: 0.6;
+}
+
+.nav-writing:hover {
+    color: var(--accent-color);
+}
+
+/* ---------------- 内容区块通用样式 ---------------- */
+section {
+    margin-bottom: 70px;
+}
+
+.section-header {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    display: inline-block;
+    min-width: 100px;
+}
+
+/* ---------------- About 区块 ---------------- */
+.about-content {
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.about-content p {
+    margin-bottom: 1em;
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* ---------------- 列表布局 (Grid) ---------------- */
 .entry-list {
+    display: grid;
+    gap: 30px;
     list-style: none;
 }
 
 .entry-item {
-    margin-bottom: 25px;
-    padding-bottom: 25px;
-    border-bottom: 1px solid var(--border-color);
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    align-items: baseline;
 }
 
-.entry-item:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
+.entry-meta {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    color: var(--text-meta);
+    text-align: right;
+    padding-right: 25px;
+    font-variant-numeric: oldstyle-nums;
+}
+
+.entry-main {
+    border-left: 1px solid transparent;
 }
 
 .entry-title {
-    font-family: var(--font-heading);
-    font-size: 1.15rem;
     font-weight: 500;
-    color: var(--text-primary);
-    margin-bottom: 5px;
+    font-size: 1.05rem;
+    margin-bottom: 4px;
 }
 
 .entry-subtitle {
+    font-style: italic;
+    color: var(--text-meta);
     font-size: 0.95rem;
-    color: var(--text-secondary);
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 }
 
-.entry-date {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    font-family: var(--font-heading);
+.entry-desc {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 6px;
 }
 
-.entry-description {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    margin-top: 10px;
-}
-
-/* Publications */
+/* 论文列表特别样式 */
 .pub-list {
+    display: grid;
+    gap: 30px;
     list-style: none;
 }
 
 .pub-item {
-    margin-bottom: 30px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid var(--border-color);
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    align-items: baseline;
 }
 
-.pub-item:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
+.pub-meta {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    color: var(--text-meta);
+    text-align: right;
+    padding-right: 25px;
+    font-variant-numeric: oldstyle-nums;
+}
+
+.pub-main {
+    margin-bottom: 15px;
 }
 
 .pub-title {
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 1.05rem;
     color: var(--text-primary);
-    margin-bottom: 8px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.pub-title:hover {
+    color: var(--accent-color);
 }
 
 .pub-authors {
     font-size: 0.9rem;
-    color: var(--text-secondary);
-    margin-bottom: 5px;
+    color: #555;
+    margin-top: 6px;
 }
 
 .pub-venue {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    font-style: italic;
-    margin-bottom: 10px;
+    font-family: var(--font-italic);
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    margin-top: 4px;
+}
+
+.pub-links {
+    margin-top: 8px;
 }
 
 .pub-links a {
@@ -196,13 +248,17 @@ nav {
     opacity: 0.7;
 }
 
-/* Blog list (Writings page) */
+/* ---------------- Blog list (Writings page) ---------------- */
 .blog-list {
+    display: grid;
+    gap: 30px;
     list-style: none;
 }
 
 .blog-item {
-    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    align-items: baseline;
     transition: transform 0.3s ease;
 }
 
@@ -210,42 +266,44 @@ nav {
     transform: translateX(5px);
 }
 
-.blog-date {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
+.blog-meta {
     font-family: var(--font-heading);
-    margin-bottom: 5px;
-    display: block;
+    font-size: 0.9rem;
+    color: var(--text-meta);
+    text-align: right;
+    padding-right: 25px;
+    font-variant-numeric: oldstyle-nums;
+}
+
+.blog-main {
+    /* Container for blog content */
 }
 
 .blog-title {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 400;
+    font-size: 1.2rem;
+    font-weight: 500;
     color: var(--text-primary);
     text-decoration: none;
     display: inline-block;
-    margin-bottom: 10px;
-    background-image: linear-gradient(transparent 95%, var(--accent-color) 5%);
-    background-repeat: no-repeat;
-    background-size: 0% 100%;
-    transition: background-size .4s ease;
+    margin-bottom: 8px;
+    transition: color 0.3s;
 }
 
-.blog-item:hover .blog-title {
-    background-size: 100% 100%;
+.blog-title:hover {
+    color: var(--accent-color);
 }
 
 .blog-excerpt {
-    color: var(--text-secondary);
-    font-size: 1rem;
+    color: var(--text-meta);
+    font-size: 0.95rem;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
-/* Blog post content */
+/* ---------------- Blog post content ---------------- */
 .post-header {
     margin-bottom: 50px;
 }
@@ -253,14 +311,14 @@ nav {
 .post-header h1 {
     font-family: var(--font-heading);
     font-size: 2rem;
-    font-weight: 400;
+    font-weight: 500;
     margin-bottom: 15px;
     line-height: 1.3;
 }
 
 .post-meta {
     font-size: 0.9rem;
-    color: var(--text-secondary);
+    color: var(--text-meta);
     font-family: var(--font-heading);
 }
 
@@ -303,8 +361,10 @@ nav {
     border-left: 2px solid var(--accent-color);
     padding-left: 20px;
     margin: 30px 0;
+    font-family: var(--font-italic);
+    font-size: 1.1rem;
     font-style: italic;
-    color: var(--text-secondary);
+    color: var(--text-meta);
 }
 
 .post-content code {
@@ -341,7 +401,7 @@ nav {
 .back-link {
     display: inline-block;
     margin-bottom: 40px;
-    color: var(--text-secondary);
+    color: var(--text-meta);
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.3s;
@@ -351,35 +411,63 @@ nav {
     color: var(--accent-color);
 }
 
-/* Footer */
+/* ---------------- Footer ---------------- */
 footer {
     margin-top: 100px;
-    padding-top: 40px;
-    border-top: 1px solid var(--border-color);
     font-size: 0.85rem;
-    color: var(--text-secondary);
-    display: flex;
-    justify-content: space-between;
+    color: var(--text-meta);
+    text-align: center;
 }
 
-.social-links a {
-    color: var(--text-secondary);
-    margin-left: 15px;
+footer p {
+    line-height: 1.8;
+}
+
+footer a {
+    color: var(--text-meta);
     text-decoration: none;
     transition: color 0.3s;
 }
 
-.social-links a:hover {
+footer a:hover {
     color: var(--accent-color);
 }
 
-/* Responsive */
+/* ---------------- 响应式调整 ---------------- */
 @media (max-width: 600px) {
-    .container { padding: 40px 20px; }
-    nav { flex-direction: column; align-items: flex-start; gap: 15px; }
-    .nav-links a { margin-left: 0; margin-right: 20px; }
-    .post-header h1 { font-size: 1.6rem; }
-    footer { flex-direction: column; gap: 15px; }
-    .social-links { margin-left: 0; }
-    .social-links a { margin-left: 0; margin-right: 15px; }
+    .container {
+        padding: 40px 20px;
+    }
+    
+    nav {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+    
+    .nav-menu {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .entry-item,
+    .pub-item,
+    .blog-item {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+    
+    .entry-meta,
+    .pub-meta,
+    .blog-meta {
+        text-align: left;
+        padding-right: 0;
+        font-size: 0.85rem;
+        opacity: 0.8;
+        margin-bottom: 2px;
+    }
+    
+    .post-header h1 {
+        font-size: 1.6rem;
+    }
 }
