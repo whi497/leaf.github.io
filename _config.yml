@@ -1,8 +1,8 @@
 # Site settings
 title: "Ziang Ye"
 description: "AI & DataScience"
-url: "https://whi497.github.io/leaf.github.io/" # Your GitHub Pages URL, e.g., https://username.github.io
-baseurl: "" # Leave empty if using username.github.io, or set to "/repo-name"
+url: "https://whi497.github.io" # Your GitHub Pages domain
+baseurl: "/leaf.github.io" # The repository/subdirectory name
 
 # Author info
 author:
