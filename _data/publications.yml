@@ -7,8 +7,8 @@
   abstract: ""
 
 - title: "VisualTrap: A Stealthy Backdoor Attack on GUI Agents via Visual Grounding Manipulation"
-  authors: "Collaborator One, Your Name"
-  venue: "Ziang Ye, Yang Zhang, Wentao Shi, Xiaoyu You, Fuli Feng, Tat-Seng Chua"
+  authors: "Ziang Ye, Yang Zhang, Wentao Shi, Xiaoyu You, Fuli Feng, Tat-Seng Chua"
+  venue: "COLM 2025"
   year: 2025
   pdf: "https://openreview.net/pdf?id=7HPuAkgdVm"
   code: "https://github.com/whi497/VisualTrap"
