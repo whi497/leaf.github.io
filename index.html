@@ -3,6 +3,15 @@ layout: default
 title: PhD Student
 ---
 
+<!-- Contact Bar -->
+<div class="contact-bar">
+    <span>📍 Hefei, China</span>
+    <span>✉ <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></span>
+    {% if site.author.scholar %}<span><a href="{{ site.author.scholar }}">Google Scholar</a></span>{% endif %}
+    {% if site.author.github %}<span><a href="https://github.com/{{ site.author.github }}">GitHub</a></span>{% endif %}
+    {% if site.author.twitter %}<span><a href="https://twitter.com/{{ site.author.twitter }}">Twitter/X</a></span>{% endif %}
+</div>
+
 <main>
     <!-- About / Introduction -->
     <section id="about">

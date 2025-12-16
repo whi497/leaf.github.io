@@ -1,36 +1,33 @@
 :root {
-    --bg-color: #f9f8f4; /* 更接近古籍纸张的暖白 */
+    --bg-color: #f9f8f4;
     --text-primary: #333333;
-    --text-meta: #777777; /* 时间、地点等辅助信息 */
-    --accent-color: #8c3b3b; /* 勃艮第红，用于强调 */
-    --border-color: #e6e4df;
+    --text-meta: #666666;
+    --accent-color: #8c3b3b;
+    --border-color: #ddd9d0;
     
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Lora', serif;
     --font-italic: 'Cormorant Garamond', serif;
 }
 
-/* 全局设置 */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-primary);
     font-family: var(--font-body);
-    line-height: 1.7;
-    font-size: 16px;
-    /* 纸张纹理 */
+    line-height: 1.65;
+    font-size: 15px;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
 }
 
 a { text-decoration: none; color: inherit; transition: color 0.3s; }
 a:hover { color: var(--accent-color); }
 
-/* 布局容器 */
 .container {
-    max-width: 800px;
+    max-width: 760px;
     margin: 0 auto;
-    padding: 60px 24px;
+    padding: 50px 24px;
 }
 
 /* Animations */
@@ -49,33 +46,29 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 80px;
-    padding-bottom: 20px;
+    margin-bottom: 50px;
+    padding-bottom: 18px;
     border-bottom: 1px solid var(--border-color);
 }
 
 .nav-name {
     font-family: var(--font-heading);
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 700;
     letter-spacing: 0.02em;
-    color: var(--text-primary);
-    text-decoration: none;
 }
 
 .nav-menu {
     display: flex;
-    gap: 30px;
+    gap: 24px;
     align-items: center;
 }
 
 .nav-item {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-meta);
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    text-decoration: none;
-    transition: color 0.3s;
 }
 
 .nav-item:hover,
@@ -83,22 +76,20 @@ nav {
     color: var(--accent-color);
 }
 
-/* 特别的 Writing 按钮样式 */
 .nav-writing {
     font-family: var(--font-italic);
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     text-transform: none;
     color: var(--text-primary);
     position: relative;
-    padding-left: 20px;
-    text-decoration: none;
+    padding-left: 18px;
 }
 
 .nav-writing::before {
     content: '✒';
     position: absolute;
     left: 0;
-    font-size: 0.8em;
+    font-size: 0.75em;
     opacity: 0.6;
 }
 
@@ -106,158 +97,229 @@ nav {
     color: var(--accent-color);
 }
 
-/* ---------------- 内容区块通用样式 ---------------- */
+/* ---------------- Contact Bar ---------------- */
+.contact-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    font-size: 0.9rem;
+    color: var(--text-meta);
+    padding: 16px 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 40px;
+}
+
+.contact-bar a {
+    color: var(--text-primary);
+}
+
+.contact-bar a:hover {
+    color: var(--accent-color);
+}
+
+/* ---------------- 内容区块 ---------------- */
 section {
-    margin-bottom: 70px;
+    margin-bottom: 40px;
 }
 
 .section-header {
     font-family: var(--font-heading);
-    font-size: 1.1rem;
-    margin-bottom: 30px;
+    font-size: 0.95rem;
+    margin-bottom: 16px;
     color: var(--text-primary);
     border-bottom: 1px solid var(--border-color);
-    padding-bottom: 10px;
+    padding-bottom: 8px;
     display: inline-block;
-    min-width: 100px;
+    min-width: 90px;
 }
 
 /* ---------------- About 区块 ---------------- */
 .about-content {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #444;
 }
 
 .about-content p {
-    margin-bottom: 1em;
+    margin-bottom: 10px;
 }
 
 .about-content p:last-child {
     margin-bottom: 0;
 }
 
-/* ---------------- 列表布局 (Grid) ---------------- */
+.research-interests {
+    margin-top: 12px;
+    padding: 12px 16px;
+    background: rgba(0,0,0,0.02);
+    border-left: 2px solid var(--accent-color);
+    font-size: 0.9rem;
+}
+
+.research-interests strong {
+    color: var(--text-primary);
+}
+
+/* ---------------- 列表布局 ---------------- */
 .entry-list {
     display: grid;
-    gap: 30px;
+    gap: 16px;
     list-style: none;
 }
 
 .entry-item {
     display: grid;
-    grid-template-columns: 140px 1fr;
+    grid-template-columns: 115px 1fr;
     align-items: baseline;
 }
 
 .entry-meta {
     font-family: var(--font-heading);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-meta);
     text-align: right;
-    padding-right: 25px;
+    padding-right: 20px;
     font-variant-numeric: oldstyle-nums;
 }
 
 .entry-main {
-    border-left: 1px solid transparent;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+.entry-item:last-child .entry-main {
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
 .entry-title {
     font-weight: 500;
-    font-size: 1.05rem;
-    margin-bottom: 4px;
+    font-size: 0.98rem;
+    margin-bottom: 2px;
 }
 
 .entry-subtitle {
     font-style: italic;
     color: var(--text-meta);
-    font-size: 0.95rem;
-    margin-bottom: 4px;
+    font-size: 0.9rem;
 }
 
 .entry-desc {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #555;
-    margin-top: 6px;
+    margin-top: 4px;
 }
 
-/* 论文列表特别样式 */
+/* 论文列表 */
 .pub-list {
     display: grid;
-    gap: 30px;
+    gap: 16px;
     list-style: none;
 }
 
 .pub-item {
     display: grid;
-    grid-template-columns: 140px 1fr;
+    grid-template-columns: 115px 1fr;
     align-items: baseline;
 }
 
 .pub-meta {
     font-family: var(--font-heading);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-meta);
     text-align: right;
-    padding-right: 25px;
+    padding-right: 20px;
     font-variant-numeric: oldstyle-nums;
 }
 
 .pub-main {
-    margin-bottom: 15px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+.pub-item:last-child .pub-main {
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
 .pub-title {
     font-weight: 600;
-    font-size: 1.05rem;
-    color: var(--text-primary);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.pub-title:hover {
-    color: var(--accent-color);
+    line-height: 1.4;
 }
 
 .pub-authors {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #555;
-    margin-top: 6px;
+    margin: 3px 0;
 }
 
 .pub-venue {
     font-family: var(--font-italic);
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--accent-color);
-    margin-top: 4px;
 }
 
 .pub-links {
-    margin-top: 8px;
+    margin-top: 5px;
+    font-size: 0.8rem;
 }
 
 .pub-links a {
-    font-size: 0.85rem;
-    color: var(--accent-color);
-    text-decoration: none;
-    margin-right: 15px;
-    transition: opacity 0.3s;
+    color: var(--text-meta);
+    margin-right: 12px;
+    text-decoration: underline;
+    text-underline-offset: 2px;
 }
 
 .pub-links a:hover {
-    opacity: 0.7;
+    color: var(--accent-color);
+}
+
+/* ---------------- 两栏小列表 (Awards, Skills等) ---------------- */
+.compact-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.compact-block h3 {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.compact-list {
+    list-style: none;
+    font-size: 0.9rem;
+}
+
+.compact-list li {
+    margin-bottom: 6px;
+    padding-left: 14px;
+    position: relative;
+    color: #444;
+}
+
+.compact-list li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--text-meta);
 }
 
 /* ---------------- Blog list (Writings page) ---------------- */
 .blog-list {
     display: grid;
-    gap: 30px;
+    gap: 16px;
     list-style: none;
 }
 
 .blog-item {
     display: grid;
-    grid-template-columns: 140px 1fr;
+    grid-template-columns: 115px 1fr;
     align-items: baseline;
     transition: transform 0.3s ease;
 }
@@ -268,25 +330,31 @@ section {
 
 .blog-meta {
     font-family: var(--font-heading);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-meta);
     text-align: right;
-    padding-right: 25px;
+    padding-right: 20px;
     font-variant-numeric: oldstyle-nums;
 }
 
 .blog-main {
-    /* Container for blog content */
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+.blog-item:last-child .blog-main {
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
 .blog-title {
     font-family: var(--font-heading);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 500;
     color: var(--text-primary);
     text-decoration: none;
     display: inline-block;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     transition: color 0.3s;
 }
 
@@ -296,7 +364,7 @@ section {
 
 .blog-excerpt {
     color: var(--text-meta);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -305,46 +373,46 @@ section {
 
 /* ---------------- Blog post content ---------------- */
 .post-header {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .post-header h1 {
     font-family: var(--font-heading);
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 500;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     line-height: 1.3;
 }
 
 .post-meta {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-meta);
     font-family: var(--font-heading);
 }
 
 .post-content {
-    font-size: 1.05rem;
-    line-height: 1.9;
+    font-size: 1rem;
+    line-height: 1.85;
 }
 
 .post-content h2 {
     font-family: var(--font-heading);
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 500;
-    margin-top: 40px;
-    margin-bottom: 20px;
+    margin-top: 35px;
+    margin-bottom: 16px;
 }
 
 .post-content h3 {
     font-family: var(--font-heading);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 500;
-    margin-top: 30px;
-    margin-bottom: 15px;
+    margin-top: 25px;
+    margin-bottom: 12px;
 }
 
 .post-content p {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .post-content a {
@@ -359,10 +427,10 @@ section {
 
 .post-content blockquote {
     border-left: 2px solid var(--accent-color);
-    padding-left: 20px;
-    margin: 30px 0;
+    padding-left: 18px;
+    margin: 25px 0;
     font-family: var(--font-italic);
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-style: italic;
     color: var(--text-meta);
 }
@@ -376,10 +444,10 @@ section {
 
 .post-content pre {
     background-color: rgba(0,0,0,0.05);
-    padding: 20px;
+    padding: 18px;
     border-radius: 5px;
     overflow-x: auto;
-    margin: 20px 0;
+    margin: 18px 0;
 }
 
 .post-content pre code {
@@ -389,21 +457,21 @@ section {
 
 .post-content ul,
 .post-content ol {
-    margin-bottom: 20px;
-    padding-left: 25px;
+    margin-bottom: 16px;
+    padding-left: 22px;
 }
 
 .post-content li {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 /* Back link */
 .back-link {
     display: inline-block;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
     color: var(--text-meta);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     transition: color 0.3s;
 }
 
@@ -413,14 +481,16 @@ section {
 
 /* ---------------- Footer ---------------- */
 footer {
-    margin-top: 100px;
-    font-size: 0.85rem;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.8rem;
     color: var(--text-meta);
     text-align: center;
 }
 
 footer p {
-    line-height: 1.8;
+    line-height: 1.6;
 }
 
 footer a {
@@ -433,28 +503,29 @@ footer a:hover {
     color: var(--accent-color);
 }
 
-/* ---------------- 响应式调整 ---------------- */
+/* ---------------- 响应式 ---------------- */
 @media (max-width: 600px) {
     .container {
-        padding: 40px 20px;
+        padding: 35px 18px;
     }
     
     nav {
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
         align-items: flex-start;
     }
     
     .nav-menu {
         width: 100%;
-        justify-content: space-between;
+        justify-content: flex-start;
+        gap: 18px;
     }
     
     .entry-item,
     .pub-item,
     .blog-item {
         grid-template-columns: 1fr;
-        gap: 5px;
+        gap: 3px;
     }
     
     .entry-meta,
@@ -462,12 +533,20 @@ footer a:hover {
     .blog-meta {
         text-align: left;
         padding-right: 0;
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         opacity: 0.8;
-        margin-bottom: 2px;
+    }
+    
+    .compact-section {
+        grid-template-columns: 1fr;
+        gap: 25px;
     }
     
     .post-header h1 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
+    }
+    
+    .contact-bar {
+        gap: 6px 18px;
     }
 }
