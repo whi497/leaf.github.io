@@ -1,7 +1,6 @@
 - title: "Disentangling Reasoning Tokens and Boilerplate Tokens For Language Model Fine-tuning"
   authors: "Ziang Ye, Zhenru Zhang, Yang Zhang, Jianxin Ma, Junyang Lin, Fuli Feng"
   venue: "Findings of ACL 2025"
-  year: 2023
   pdf: "https://aclanthology.org/2025.findings-acl.1078.pdf"
   code: ""
   abstract: ""
@@ -9,7 +8,6 @@
 - title: "VisualTrap: A Stealthy Backdoor Attack on GUI Agents via Visual Grounding Manipulation"
   authors: "Ziang Ye, Yang Zhang, Wentao Shi, Xiaoyu You, Fuli Feng, Tat-Seng Chua"
   venue: "COLM 2025"
-  year: 2025
   pdf: "https://openreview.net/pdf?id=7HPuAkgdVm"
   code: "https://github.com/whi497/VisualTrap"
   abstract: ""
