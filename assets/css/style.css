@@ -355,11 +355,14 @@ section {
     text-decoration: none;
     display: inline-block;
     margin-bottom: 6px;
-    transition: color 0.3s;
+    background-image: linear-gradient(transparent 95%, var(--accent-color) 5%);
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition: background-size 0.4s ease;
 }
 
-.blog-title:hover {
-    color: var(--accent-color);
+.blog-item:hover .blog-title {
+    background-size: 100% 100%; /* 悬停时的下划线动画 */
 }
 
 .blog-excerpt {
