@@ -4,12 +4,11 @@ title: "AI Ethics: The Mirror of Humanity"
 date: 2023-08-02
 excerpt: "Reflecting on the ethical alignment problem not as a coding bug, but as a sociological mirror reflecting our own biases."
 ---
-
 Reflecting on the ethical alignment problem not as a coding bug, but as a sociological mirror reflecting our own biases.
 
 ## The Alignment Problem
 
-Much ink has been spilled on aligning AI systems with human values. But this framing assumes we know what "human values" are—a premise that centuries of moral philosophy have failed to establish definitively.
+Much ink has been spilled on aligning AI systems with human values. But this framing assumes we know what "human values" are—a premise that centuries of moral 
 
 ## AI as Mirror
 
@@ -22,6 +21,7 @@ The uncomfortable truth is that AI doesn't create bias; it amplifies and reveals
 If AI reflects human bias, then AI ethics cannot be divorced from human ethics. Technical solutions—debiasing algorithms, fairness constraints—are necessary but insufficient.
 
 We need to ask harder questions:
+
 - Whose values should AI systems encode?
 - How do we handle genuine moral disagreement?
 - Is it possible to build systems that are "fair" in any meaningful sense?

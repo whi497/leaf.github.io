@@ -8,6 +8,9 @@ baseurl: "/leaf.github.io" # The repository/subdirectory name
 author:
   name: "Ziang Ye"
   email: "yza03@mail.ustc.edu.cn"
+  github: "whi497"
+  scholar: "https://scholar.google.com/citations?user=o3TlNEUAAAAJ&hl=en"
+  # twitter: "your_handle"
 
 # Build settings
 markdown: kramdown
