@@ -6,10 +6,10 @@
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
     <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | truncate: 160 }}">
 
-    <!-- 字体：Playfair Display (标题/优雅), Lora (正文/阅读), Cormorant Garamond (斜体强调) -->
+    <!-- Fonts: strong sans body, serif display headings -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&family=Lora:wght@400;500&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@450;500;600;700;800&family=Lora:ital,wght@0,500;0,600;1,500;1,600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
