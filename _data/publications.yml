@@ -10,7 +10,7 @@
   authors: "Ziang Ye, Yang Zhang, Wentao Shi, Xiaoyu You, Fuli Feng, Tat-Seng Chua"
   venue: "COLM 2025"
   year: "2025"
-  pdf: "https://openreview.net/pdf?id=7HPuAkgdVm"
+  pdf: "https://arxiv.org/pdf/2507.06899"
   code: "https://github.com/whi497/VisualTrap"
   abstract: "Studies a stealthy visual-grounding backdoor that redirects GUI-agent actions to attacker-specified trigger locations."
 
@@ -18,15 +18,15 @@
   authors: "Yuxin Chen, Yu Wang, Yi Zhang, Ziang Ye, Zhengzhou Cai, Yaorui Shi, Qi Gu, Hui Su, Xunliang Cai, Xiang Wang, An Zhang, Tat-Seng Chua"
   venue: "ICML 2026"
   year: "2026"
-  pdf: ""
-  code: ""
+  pdf: "https://arxiv.org/pdf/2602.07594"
+  code: "https://github.com/chenyuxin1999/Learning-to-Self-Verify"
   abstract: "Investigates self-verification as a mechanism for improving language model reasoning."
 
 - title: "Look Before You Leap: Autonomous Exploration for LLM Agents"
   authors: "Ziang Ye, Wentao Shi, Yuxin Liu, Yu Wang, Zhengzhou Cai, Yaorui Shi, Qi Gu, Xunliang Cai, Fuli Feng"
   venue: "Submitted to NeurIPS 2026"
   year: "2026"
-  pdf: ""
+  pdf: "https://arxiv.org/pdf/2605.16143"
   code: ""
   abstract: "Explores autonomous exploration before execution for long-horizon interactive agents."
 
@@ -34,7 +34,6 @@
   authors: "Yuxin Liu, Ziang Ye, Yueqing Sun, Mingye Zhu, Jinwei Xiao, Zhuowen Han, Qi Gu, Xunliang Cai, Lei Zhang"
   venue: "Submitted to NeurIPS 2026"
   year: "2026"
-  pdf: ""
+  pdf: "https://arxiv.org/pdf/2605.13037"
   code: ""
   abstract: "Develops map-then-act reasoning for long-horizon interactive agent tasks."
-
