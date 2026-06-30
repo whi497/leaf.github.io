@@ -160,6 +160,30 @@ section {
     color: var(--text-primary);
 }
 
+.research-focus-list {
+    display: grid;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.research-focus {
+    padding-left: 16px;
+    border-left: 2px solid var(--accent-color);
+}
+
+.research-focus strong {
+    display: block;
+    font-size: 0.96rem;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+
+.research-focus p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0;
+}
+
 /* ---------------- 列表布局 ---------------- */
 .entry-list {
     display: grid;
@@ -259,6 +283,12 @@ section {
     color: var(--accent-color);
 }
 
+.pub-abstract {
+    font-size: 0.85rem;
+    color: #555;
+    margin-top: 4px;
+}
+
 .pub-links {
     margin-top: 5px;
     font-size: 0.8rem;
@@ -308,6 +338,19 @@ section {
     position: absolute;
     left: 0;
     color: var(--text-meta);
+}
+
+.compact-meta {
+    display: block;
+    color: var(--text-meta);
+    font-size: 0.82rem;
+}
+
+.compact-subtitle {
+    display: block;
+    color: var(--text-meta);
+    font-size: 0.82rem;
+    font-style: italic;
 }
 
 /* ---------------- Blog list (Writings page) ---------------- */

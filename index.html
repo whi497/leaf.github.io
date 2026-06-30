@@ -1,12 +1,13 @@
 ---
 layout: default
-title: MS Student
+title: LLM Agent Researcher
 ---
 
 <!-- Contact Bar -->
 <div class="contact-bar">
     <span>📍 Hefei, China</span>
     <span>✉ <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></span>
+    {% if site.author.phone %}<span>☎ {{ site.author.phone }}</span>{% endif %}
     {% if site.author.scholar %}<span><a href="{{ site.author.scholar }}">Google Scholar</a></span>{% endif %}
     {% if site.author.github %}<span><a href="https://github.com/{{ site.author.github }}">GitHub</a></span>{% endif %}
     {% if site.author.twitter %}<span><a href="https://twitter.com/{{ site.author.twitter }}">Twitter/X</a></span>{% endif %}
@@ -18,8 +19,22 @@ title: MS Student
         <h2 class="section-header">Introduction</h2>
         <div class="about-content">
             <p>
-                My research interests primarily focus on enhancing the reasoning capabilities of large language models (LLMs) and advancing their application as autonomous agents in complex, real-world settings. I am pursuing to develop active learning and self-motivated agent intelligence.
+                My research focuses on developing reliable and self-improving large language model (LLM) agents for long-horizon interactive environments. I study how agents can reason, explore, verify intermediate progress, learn from experience, and remain robust when deployed in complex real-world settings.
             </p>
+            <div class="research-focus-list">
+                <div class="research-focus">
+                    <strong>LLM-Based Agent Reasoning and Fine-Tuning</strong>
+                    <p>Investigating how different tokens contribute to agent fine-tuning, with emphasis on separating critical reasoning tokens from repetitive boilerplate tokens.</p>
+                </div>
+                <div class="research-focus">
+                    <strong>Long-Horizon Interactive Agents</strong>
+                    <p>Developing methods for autonomous exploration, map-then-act reasoning, self-verification, and experience-driven learning under sparse rewards and expensive rollouts.</p>
+                </div>
+                <div class="research-focus">
+                    <strong>Agent Security, Robustness, and Deployment</strong>
+                    <p>Studying safety risks in deployed GUI agents, including visual-grounding backdoors and robustness challenges in real-world interfaces.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -51,7 +66,7 @@ title: MS Student
                 <div class="entry-meta">{{ exp.year }}</div>
                 <div class="entry-main">
                     <div class="entry-title">{{ exp.role }}</div>
-                    <div class="entry-subtitle">{{ exp.company }}</div>
+                    <div class="entry-subtitle">{{ exp.company }}{% if exp.location %}, {{ exp.location }}{% endif %}</div>
                     {% if exp.description and exp.description != "" %}
                     <div class="entry-desc">{{ exp.description }}</div>
                     {% endif %}
@@ -63,11 +78,11 @@ title: MS Student
 
     <!-- Publications -->
     <section id="research">
-        <h2 class="section-header">Selected Publications</h2>
+        <h2 class="section-header">Publications</h2>
         <ul class="pub-list">
             {% for pub in site.data.publications %}
             <li class="pub-item">
-                <div class="pub-meta">{{ pub.venue }}</div>
+                <div class="pub-meta">{{ pub.year | default: pub.venue }}</div>
                 <div class="pub-main">
                     {% if pub.pdf and pub.pdf != "" %}
                     <a href="{{ pub.pdf }}" class="pub-title">{{ pub.title }}</a>
@@ -75,7 +90,10 @@ title: MS Student
                     <span class="pub-title">{{ pub.title }}</span>
                     {% endif %}
                     <div class="pub-authors">{{ pub.authors }}</div>
-                    <div class="pub-venue">{{ pub.venue }}{% if pub.year %}, {{ pub.year }}{% endif %}</div>
+                    <div class="pub-venue">{{ pub.venue }}</div>
+                    {% if pub.abstract and pub.abstract != "" %}
+                    <div class="pub-abstract">{{ pub.abstract }}</div>
+                    {% endif %}
                     {% if pub.pdf != "" or pub.code != "" %}
                     <div class="pub-links">
                         {% if pub.pdf and pub.pdf != "" %}<a href="{{ pub.pdf }}">[PDF]</a>{% endif %}
@@ -87,4 +105,28 @@ title: MS Student
             {% endfor %}
         </ul>
     </section>
+
+    <div class="compact-section">
+        <section id="awards" class="compact-block">
+            <h3>Awards</h3>
+            <ul class="compact-list">
+                {% for award in site.data.awards %}
+                <li>{{ award.title }}, {{ award.organization }} <span class="compact-meta">{{ award.year }}</span></li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section id="teaching" class="compact-block">
+            <h3>Teaching</h3>
+            <ul class="compact-list">
+                {% for teaching in site.data.teaching %}
+                <li>
+                    {{ teaching.course }}
+                    <span class="compact-meta">{{ teaching.year }}</span>
+                    <span class="compact-subtitle">{{ teaching.role }}, {{ teaching.institution }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </div>
 </main>
