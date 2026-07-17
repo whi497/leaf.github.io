@@ -5,7 +5,7 @@
   description: "Develop active agents for solving long-horizon tasks in diverse and complex environments. Mentor: Qi Gu."
 
 - role: "Research Intern"
-  company: "Alibaba Group, Tongyi Lab"
+  company: "Alibaba Group, Qwen"
   location: "Hangzhou, China"
   year: "Feb 2024 - Sept 2024"
   description: "Developed fine-tuning strategies, including RFT, to improve the accuracy and robustness of LLM agents' function-calling capabilities. Mentor: Jianxin Ma."
