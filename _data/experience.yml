@@ -1,11 +1,20 @@
 - role: "Research Intern"
-  company: "Meituan, Longcat Team"
+  company: "Meituan, LongCat APA Team"
   location: "Beijing, China"
   year: "Jan 2026 - Present"
-  description: "Develop active agents for solving long-horizon tasks in diverse and complex environments. Mentor: Qi Gu."
+  description: "Research on <strong>long-horizon LLM agents</strong>: autonomous exploration, structured environment understanding, self-verification, and agentic reinforcement learning in complex interactive environments."
+  points:
+    - "<em>Look Before You Leap</em> and <em>MAP</em> (both submitted to NeurIPS 2026) make exploration a distinct stage of agent learning: agents actively probe unfamiliar environments before task execution, trained with dedicated verifiable rewards and budgets for robustness under sparse rewards and costly rollouts."
+    - "<em>Travel Back to Move Forward</em> proposes an agent with rewind capabilities that autonomously backtracks and keeps evolving on long-horizon tasks."
+    - "Contributed to <em>Learning to Self-Verify</em> (ICML 2026), showing that explicit training for intermediate self-verification improves both verification and generation, and enables efficient test-time scaling."
+    - "Contributed to <strong>agentic RL and self-evolving agents</strong>: <em>CAST</em> (solver-derived turn-level supervision), <em>SkillRise</em> (cross-task skill evolution), and <em>AgentOPSD</em> (recursive self-distillation). Also contributed <strong>data synthesis</strong> and <strong>post-training</strong> to LongCat Pro 2.0, LongCat Pro Next 2.0, and the internal harness CatClaw."
+    - "Mentor: <a href=\"https://scholar.google.com/citations?user=s_5-ctUAAAAJ\">Qi Gu</a>."
 
 - role: "Research Intern"
   company: "Alibaba Group, Qwen"
   location: "Hangzhou, China"
   year: "Feb 2024 - Sept 2024"
-  description: "Developed fine-tuning strategies, including RFT, to improve the accuracy and robustness of LLM agents' function-calling capabilities. Mentor: Jianxin Ma."
+  description: "Fine-tuning and rejection fine-tuning (RFT) strategies for the accuracy and robustness of LLM agents' function-calling and tool-use capabilities."
+  points:
+    - "<em>Disentangling Reasoning Tokens and Boilerplate Tokens</em> (ACL 2025 Findings) identifies the unequal importance of tokens during supervised fine-tuning and adaptively upweights reasoning-critical tokens over repetitive boilerplate, yielding consistent gains on agent and tool-use tasks."
+    - "Mentor: <a href=\"https://scholar.google.com/citations?user=WdDFFlIAAAAJ\">Jianxin Ma</a>."

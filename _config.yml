@@ -1,6 +1,6 @@
 # Site settings
 title: "Ziang Ye"
-description: "LLM Agents, Long-Horizon Reasoning, and Agent Security"
+description: "LLM Agents, Long-Horizon Reasoning, and Self-Evolving Agents"
 url: "https://whi497.github.io" # Your GitHub Pages domain
 baseurl: "/leaf.github.io" # The repository/subdirectory name
 
@@ -8,7 +8,7 @@ baseurl: "/leaf.github.io" # The repository/subdirectory name
 author:
   name: "Ziang Ye"
   email: "yza03@mail.ustc.edu.cn"
-  phone: "17671088468"
+  phone: "+86 176 7108 8468"
   github: "whi497"
   scholar: "https://scholar.google.com/citations?user=o3TlNEUAAAAJ&hl=en"
   # twitter: "your_handle"

@@ -19,20 +19,23 @@ title: LLM Agent Researcher
         <h2 class="section-header">Introduction</h2>
         <div class="about-content">
             <p>
-                My research focuses on developing reliable and self-improving large language model (LLM) agents for long-horizon interactive environments. I study how agents can reason, explore, verify intermediate progress, learn from experience, and remain robust when deployed in complex real-world settings.
+                I am a second-year master's student in the <a href="https://data-science.ustc.edu.cn/index.htm">LDS Lab</a> at the University of Science and Technology of China (USTC). In September 2026 I will begin my PhD in Data Science and Artificial Intelligence at <a href="https://ustc.edu.cn/">USTC</a> and the <a href="https://www.sii.edu.cn/">Shanghai Innovation Institution</a> (SII), advised by <a href="https://scholar.google.com/citations?user=QePM4u8AAAAJ">Prof. Fuli Feng</a> and <a href="https://scholar.google.com/citations?user=CnhTvdoAAAAJ">Prof. Yixin Cao</a>.
+            </p>
+            <p>
+                My research focuses on building large language model (LLM) agents that can operate reliably over long horizons and continually improve through their own experience.
             </p>
             <div class="research-focus-list">
                 <div class="research-focus">
-                    <strong>LLM-Based Agent Reasoning and Fine-Tuning</strong>
-                    <p>Investigating how different tokens contribute to agent fine-tuning, with emphasis on separating critical reasoning tokens from repetitive boilerplate tokens.</p>
+                    <strong>Long-Horizon Agents</strong>
+                    <p>Agents that stay reliable in unfamiliar, complex environments: active exploration before commitment, building a structured model of the environment and then acting on it, self-verification of intermediate reasoning, and robustness of the grounding such agents depend on.</p>
                 </div>
                 <div class="research-focus">
-                    <strong>Long-Horizon Interactive Agents</strong>
-                    <p>Developing methods for autonomous exploration, map-then-act reasoning, self-verification, and experience-driven learning under sparse rewards and expensive rollouts.</p>
+                    <strong>Self-Evolving Agents &amp; Recursive Self-Improvement</strong>
+                    <p>Agents that improve from their own experience: accumulating reusable skills and experience that transfer across tasks, and recursively distilling their own rollouts into a better policy.</p>
                 </div>
                 <div class="research-focus">
-                    <strong>Agent Security, Robustness, and Deployment</strong>
-                    <p>Studying safety risks in deployed GUI agents, including visual-grounding backdoors and robustness challenges in real-world interfaces.</p>
+                    <strong>Agentic RL &amp; Fine-Tuning</strong>
+                    <p>Supervision at the right granularity: upweighting reasoning-critical tokens over boilerplate during fine-tuning, and dense turn-level credit for multi-turn agentic RL.</p>
                 </div>
             </div>
         </div>
@@ -70,6 +73,13 @@ title: LLM Agent Researcher
                     {% if exp.description and exp.description != "" %}
                     <div class="entry-desc">{{ exp.description }}</div>
                     {% endif %}
+                    {% if exp.points %}
+                    <ul class="entry-points">
+                        {% for point in exp.points %}
+                        <li>{{ point }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
                 </div>
             </li>
             {% endfor %}
@@ -79,8 +89,40 @@ title: LLM Agent Researcher
     <!-- Publications -->
     <section id="research">
         <h2 class="section-header">Publications</h2>
+
+        {% assign peer_reviewed = site.data.publications | where: "type", "peer-reviewed" %}
+        {% assign preprints = site.data.publications | where: "type", "preprint" %}
+
+        <h3 class="pub-group-header">Peer-Reviewed Conference Papers</h3>
         <ul class="pub-list">
-            {% for pub in site.data.publications %}
+            {% for pub in peer_reviewed %}
+            <li class="pub-item">
+                <div class="pub-meta">{{ pub.year | default: pub.venue }}</div>
+                <div class="pub-main">
+                    {% if pub.pdf and pub.pdf != "" %}
+                    <a href="{{ pub.pdf }}" class="pub-title">{{ pub.title }}</a>
+                    {% else %}
+                    <span class="pub-title">{{ pub.title }}</span>
+                    {% endif %}
+                    <div class="pub-authors">{{ pub.authors }}</div>
+                    <div class="pub-venue">{{ pub.venue }}</div>
+                    {% if pub.abstract and pub.abstract != "" %}
+                    <div class="pub-abstract">{{ pub.abstract }}</div>
+                    {% endif %}
+                    {% if pub.pdf != "" or pub.code != "" %}
+                    <div class="pub-links">
+                        {% if pub.pdf and pub.pdf != "" %}<a href="{{ pub.pdf }}">[PDF]</a>{% endif %}
+                        {% if pub.code and pub.code != "" %}<a href="{{ pub.code }}">[Code]</a>{% endif %}
+                    </div>
+                    {% endif %}
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <h3 class="pub-group-header">Preprints and Manuscripts Under Review</h3>
+        <ul class="pub-list">
+            {% for pub in preprints %}
             <li class="pub-item">
                 <div class="pub-meta">{{ pub.year | default: pub.venue }}</div>
                 <div class="pub-main">
